@@ -1,0 +1,577 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "stream_with_context",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "current_app",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "ask_question",
+        "importPath": "chat",
+        "description": "chat",
+        "isExtraImport": true,
+        "detail": "chat",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "ElasticsearchStore",
+        "importPath": "langchain_elasticsearch",
+        "description": "langchain_elasticsearch",
+        "isExtraImport": true,
+        "detail": "langchain_elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "ElasticsearchChatMessageHistory",
+        "importPath": "langchain_elasticsearch",
+        "description": "langchain_elasticsearch",
+        "isExtraImport": true,
+        "detail": "langchain_elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "ElasticsearchStore",
+        "importPath": "langchain_elasticsearch",
+        "description": "langchain_elasticsearch",
+        "isExtraImport": true,
+        "detail": "langchain_elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "get_llm",
+        "importPath": "llm_integrations",
+        "description": "llm_integrations",
+        "isExtraImport": true,
+        "detail": "llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "elasticsearch_client",
+        "importPath": "elasticsearch_client",
+        "description": "elasticsearch_client",
+        "isExtraImport": true,
+        "detail": "elasticsearch_client",
+        "documentation": {}
+    },
+    {
+        "label": "get_elasticsearch_chat_message_history",
+        "importPath": "elasticsearch_client",
+        "description": "elasticsearch_client",
+        "isExtraImport": true,
+        "detail": "elasticsearch_client",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Elasticsearch",
+        "importPath": "elasticsearch",
+        "description": "elasticsearch",
+        "isExtraImport": true,
+        "detail": "elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "Elasticsearch",
+        "importPath": "elasticsearch",
+        "description": "elasticsearch",
+        "isExtraImport": true,
+        "detail": "elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "NotFoundError",
+        "importPath": "elasticsearch",
+        "description": "elasticsearch",
+        "isExtraImport": true,
+        "detail": "elasticsearch",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOpenAI",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatVertexAI",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "AzureChatOpenAI",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "BedrockChat",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatCohere",
+        "importPath": "langchain_community.chat_models",
+        "description": "langchain_community.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_community.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMistralAI",
+        "importPath": "langchain_mistralai.chat_models",
+        "description": "langchain_mistralai.chat_models",
+        "isExtraImport": true,
+        "detail": "langchain_mistralai.chat_models",
+        "documentation": {}
+    },
+    {
+        "label": "vertexai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "vertexai",
+        "description": "vertexai",
+        "detail": "vertexai",
+        "documentation": {}
+    },
+    {
+        "label": "boto3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "boto3",
+        "description": "boto3",
+        "detail": "boto3",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "langchain.docstore.document",
+        "description": "langchain.docstore.document",
+        "isExtraImport": true,
+        "detail": "langchain.docstore.document",
+        "documentation": {}
+    },
+    {
+        "label": "RecursiveCharacterTextSplitter",
+        "importPath": "langchain.text_splitter",
+        "description": "langchain.text_splitter",
+        "isExtraImport": true,
+        "detail": "langchain.text_splitter",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "api_index",
+        "kind": 2,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "def api_index():\n    return app.send_static_file(\"index.html\")\n@app.route(\"/api/chat\", methods=[\"POST\"])\ndef api_chat():\n    request_json = request.get_json()\n    question = request_json.get(\"question\")\n    if question is None:\n        return jsonify({\"msg\": \"Missing question from request JSON\"}), 400\n    session_id = request.args.get(\"session_id\", str(uuid4()))\n    return Response(ask_question(question, session_id), mimetype=\"text/event-stream\")",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "api_chat",
+        "kind": 2,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "def api_chat():\n    request_json = request.get_json()\n    question = request_json.get(\"question\")\n    if question is None:\n        return jsonify({\"msg\": \"Missing question from request JSON\"}), 400\n    session_id = request.args.get(\"session_id\", str(uuid4()))\n    return Response(ask_question(question, session_id), mimetype=\"text/event-stream\")\n@app.cli.command()\ndef create_index():\n    \"\"\"Create or re-create the Elasticsearch index.\"\"\"",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "create_index",
+        "kind": 2,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "def create_index():\n    \"\"\"Create or re-create the Elasticsearch index.\"\"\"\n    basedir = os.path.abspath(os.path.dirname(__file__))\n    sys.path.append(f\"{basedir}/../\")\n    from data import index_data\n    index_data.main()\nif __name__ == \"__main__\":\n    app.run(port=3001, debug=True)",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "api.app",
+        "description": "api.app",
+        "peekOfCode": "app = Flask(__name__, static_folder=\"../frontend/build\", static_url_path=\"/\")\nCORS(app)\n@app.route(\"/\")\ndef api_index():\n    return app.send_static_file(\"index.html\")\n@app.route(\"/api/chat\", methods=[\"POST\"])\ndef api_chat():\n    request_json = request.get_json()\n    question = request_json.get(\"question\")\n    if question is None:",
+        "detail": "api.app",
+        "documentation": {}
+    },
+    {
+        "label": "ask_question",
+        "kind": 2,
+        "importPath": "api.chat",
+        "description": "api.chat",
+        "peekOfCode": "def ask_question(question, session_id):\n    yield f\"data: {SESSION_ID_TAG} {session_id}\\n\\n\"\n    current_app.logger.debug(\"Chat session ID: %s\", session_id)\n    chat_history = get_elasticsearch_chat_message_history(\n        INDEX_CHAT_HISTORY, session_id\n    )\n    if len(chat_history.messages) > 0:\n        # create a condensed question\n        condense_question_prompt = render_template(\n            \"condense_question_prompt.txt\",",
+        "detail": "api.chat",
+        "documentation": {}
+    },
+    {
+        "label": "INDEX",
+        "kind": 5,
+        "importPath": "api.chat",
+        "description": "api.chat",
+        "peekOfCode": "INDEX = os.getenv(\"ES_INDEX\", \"workplace-app-docs\")\nINDEX_CHAT_HISTORY = os.getenv(\n    \"ES_INDEX_CHAT_HISTORY\", \"workplace-app-docs-chat-history\"\n)\nELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nSESSION_ID_TAG = \"[SESSION_ID]\"\nSOURCE_TAG = \"[SOURCE]\"\nDONE_TAG = \"[DONE]\"\nstore = ElasticsearchStore(\n    es_connection=elasticsearch_client,",
+        "detail": "api.chat",
+        "documentation": {}
+    },
+    {
+        "label": "INDEX_CHAT_HISTORY",
+        "kind": 5,
+        "importPath": "api.chat",
+        "description": "api.chat",
+        "peekOfCode": "INDEX_CHAT_HISTORY = os.getenv(\n    \"ES_INDEX_CHAT_HISTORY\", \"workplace-app-docs-chat-history\"\n)\nELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nSESSION_ID_TAG = \"[SESSION_ID]\"\nSOURCE_TAG = \"[SOURCE]\"\nDONE_TAG = \"[DONE]\"\nstore = ElasticsearchStore(\n    es_connection=elasticsearch_client,\n    index_name=INDEX,",
+        "detail": "api.chat",
+        "documentation": {}
+    },
+    {
+        "label": "ELSER_MODEL",
+        "kind": 5,
+        "importPath": "api.chat",
+        "description": "api.chat",
+        "peekOfCode": "ELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nSESSION_ID_TAG = \"[SESSION_ID]\"\nSOURCE_TAG = \"[SOURCE]\"\nDONE_TAG = \"[DONE]\"\nstore = ElasticsearchStore(\n    es_connection=elasticsearch_client,\n    index_name=INDEX,\n    strategy=ElasticsearchStore.SparseVectorRetrievalStrategy(model_id=ELSER_MODEL),\n)\n@stream_with_context",
+        "detail": "api.chat",
+        "documentation": {}
+    },
+    {
+        "label": "SESSION_ID_TAG",
+        "kind": 5,
+        "importPath": "api.chat",
+        "description": "api.chat",
+        "peekOfCode": "SESSION_ID_TAG = \"[SESSION_ID]\"\nSOURCE_TAG = \"[SOURCE]\"\nDONE_TAG = \"[DONE]\"\nstore = ElasticsearchStore(\n    es_connection=elasticsearch_client,\n    index_name=INDEX,\n    strategy=ElasticsearchStore.SparseVectorRetrievalStrategy(model_id=ELSER_MODEL),\n)\n@stream_with_context\ndef ask_question(question, session_id):",
+        "detail": "api.chat",
+        "documentation": {}
+    },
+    {
+        "label": "SOURCE_TAG",
+        "kind": 5,
+        "importPath": "api.chat",
+        "description": "api.chat",
+        "peekOfCode": "SOURCE_TAG = \"[SOURCE]\"\nDONE_TAG = \"[DONE]\"\nstore = ElasticsearchStore(\n    es_connection=elasticsearch_client,\n    index_name=INDEX,\n    strategy=ElasticsearchStore.SparseVectorRetrievalStrategy(model_id=ELSER_MODEL),\n)\n@stream_with_context\ndef ask_question(question, session_id):\n    yield f\"data: {SESSION_ID_TAG} {session_id}\\n\\n\"",
+        "detail": "api.chat",
+        "documentation": {}
+    },
+    {
+        "label": "DONE_TAG",
+        "kind": 5,
+        "importPath": "api.chat",
+        "description": "api.chat",
+        "peekOfCode": "DONE_TAG = \"[DONE]\"\nstore = ElasticsearchStore(\n    es_connection=elasticsearch_client,\n    index_name=INDEX,\n    strategy=ElasticsearchStore.SparseVectorRetrievalStrategy(model_id=ELSER_MODEL),\n)\n@stream_with_context\ndef ask_question(question, session_id):\n    yield f\"data: {SESSION_ID_TAG} {session_id}\\n\\n\"\n    current_app.logger.debug(\"Chat session ID: %s\", session_id)",
+        "detail": "api.chat",
+        "documentation": {}
+    },
+    {
+        "label": "store",
+        "kind": 5,
+        "importPath": "api.chat",
+        "description": "api.chat",
+        "peekOfCode": "store = ElasticsearchStore(\n    es_connection=elasticsearch_client,\n    index_name=INDEX,\n    strategy=ElasticsearchStore.SparseVectorRetrievalStrategy(model_id=ELSER_MODEL),\n)\n@stream_with_context\ndef ask_question(question, session_id):\n    yield f\"data: {SESSION_ID_TAG} {session_id}\\n\\n\"\n    current_app.logger.debug(\"Chat session ID: %s\", session_id)\n    chat_history = get_elasticsearch_chat_message_history(",
+        "detail": "api.chat",
+        "documentation": {}
+    },
+    {
+        "label": "get_elasticsearch_chat_message_history",
+        "kind": 2,
+        "importPath": "api.elasticsearch_client",
+        "description": "api.elasticsearch_client",
+        "peekOfCode": "def get_elasticsearch_chat_message_history(index, session_id):\n    return ElasticsearchChatMessageHistory(\n        es_connection=elasticsearch_client, index=index, session_id=session_id\n    )",
+        "detail": "api.elasticsearch_client",
+        "documentation": {}
+    },
+    {
+        "label": "ELASTIC_CLOUD_ID",
+        "kind": 5,
+        "importPath": "api.elasticsearch_client",
+        "description": "api.elasticsearch_client",
+        "peekOfCode": "ELASTIC_CLOUD_ID = os.getenv(\"ELASTIC_CLOUD_ID\")\nELASTICSEARCH_URL = os.getenv(\"ELASTICSEARCH_URL\")\nELASTIC_API_KEY = os.getenv(\"ELASTIC_API_KEY\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )\nelif ELASTIC_CLOUD_ID:\n    elasticsearch_client = Elasticsearch(\n        cloud_id=ELASTIC_CLOUD_ID, api_key=ELASTIC_API_KEY",
+        "detail": "api.elasticsearch_client",
+        "documentation": {}
+    },
+    {
+        "label": "ELASTICSEARCH_URL",
+        "kind": 5,
+        "importPath": "api.elasticsearch_client",
+        "description": "api.elasticsearch_client",
+        "peekOfCode": "ELASTICSEARCH_URL = os.getenv(\"ELASTICSEARCH_URL\")\nELASTIC_API_KEY = os.getenv(\"ELASTIC_API_KEY\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )\nelif ELASTIC_CLOUD_ID:\n    elasticsearch_client = Elasticsearch(\n        cloud_id=ELASTIC_CLOUD_ID, api_key=ELASTIC_API_KEY\n    )",
+        "detail": "api.elasticsearch_client",
+        "documentation": {}
+    },
+    {
+        "label": "ELASTIC_API_KEY",
+        "kind": 5,
+        "importPath": "api.elasticsearch_client",
+        "description": "api.elasticsearch_client",
+        "peekOfCode": "ELASTIC_API_KEY = os.getenv(\"ELASTIC_API_KEY\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )\nelif ELASTIC_CLOUD_ID:\n    elasticsearch_client = Elasticsearch(\n        cloud_id=ELASTIC_CLOUD_ID, api_key=ELASTIC_API_KEY\n    )\nelse:",
+        "detail": "api.elasticsearch_client",
+        "documentation": {}
+    },
+    {
+        "label": "init_openai_chat",
+        "kind": 2,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "def init_openai_chat(temperature):\n    OPENAI_API_KEY = os.getenv(\"OPENAI_API_KEY\")\n    return ChatOpenAI(\n        openai_api_key=OPENAI_API_KEY, streaming=True, temperature=temperature\n    )\ndef init_vertex_chat(temperature):\n    VERTEX_PROJECT_ID = os.getenv(\"VERTEX_PROJECT_ID\")\n    VERTEX_REGION = os.getenv(\"VERTEX_REGION\", \"us-central1\")\n    vertexai.init(project=VERTEX_PROJECT_ID, location=VERTEX_REGION)\n    return ChatVertexAI(streaming=True, temperature=temperature)",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "init_vertex_chat",
+        "kind": 2,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "def init_vertex_chat(temperature):\n    VERTEX_PROJECT_ID = os.getenv(\"VERTEX_PROJECT_ID\")\n    VERTEX_REGION = os.getenv(\"VERTEX_REGION\", \"us-central1\")\n    vertexai.init(project=VERTEX_PROJECT_ID, location=VERTEX_REGION)\n    return ChatVertexAI(streaming=True, temperature=temperature)\ndef init_azure_chat(temperature):\n    OPENAI_VERSION = os.getenv(\"OPENAI_VERSION\", \"2023-05-15\")\n    BASE_URL = os.getenv(\"OPENAI_BASE_URL\")\n    OPENAI_API_KEY = os.getenv(\"OPENAI_API_KEY\")\n    OPENAI_ENGINE = os.getenv(\"OPENAI_ENGINE\")",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "init_azure_chat",
+        "kind": 2,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "def init_azure_chat(temperature):\n    OPENAI_VERSION = os.getenv(\"OPENAI_VERSION\", \"2023-05-15\")\n    BASE_URL = os.getenv(\"OPENAI_BASE_URL\")\n    OPENAI_API_KEY = os.getenv(\"OPENAI_API_KEY\")\n    OPENAI_ENGINE = os.getenv(\"OPENAI_ENGINE\")\n    return AzureChatOpenAI(\n        deployment_name=OPENAI_ENGINE,\n        openai_api_base=BASE_URL,\n        openai_api_version=OPENAI_VERSION,\n        openai_api_key=OPENAI_API_KEY,",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "init_bedrock",
+        "kind": 2,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "def init_bedrock(temperature):\n    AWS_ACCESS_KEY = os.getenv(\"AWS_ACCESS_KEY\")\n    AWS_SECRET_KEY = os.getenv(\"AWS_SECRET_KEY\")\n    AWS_REGION = os.getenv(\"AWS_REGION\")\n    AWS_MODEL_ID = os.getenv(\"AWS_MODEL_ID\", \"anthropic.claude-v2\")\n    BEDROCK_CLIENT = boto3.client(\n        service_name=\"bedrock-runtime\",\n        region_name=AWS_REGION,\n        aws_access_key_id=AWS_ACCESS_KEY,\n        aws_secret_access_key=AWS_SECRET_KEY,",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "init_mistral_chat",
+        "kind": 2,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "def init_mistral_chat(temperature):\n    MISTRAL_API_ENDPOINT = os.getenv(\"MISTRAL_API_ENDPOINT\")\n    MISTRAL_API_KEY = os.getenv(\"MISTRAL_API_KEY\")\n    MISTRAL_MODEL = os.getenv(\"MISTRAL_MODEL\", \"Mistral-large\")\n    kwargs = {\n        \"mistral_api_key\": MISTRAL_API_KEY,\n        \"temperature\": temperature,\n    }\n    if MISTRAL_API_ENDPOINT:\n        kwargs[\"endpoint\"] = MISTRAL_API_ENDPOINT",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "init_cohere_chat",
+        "kind": 2,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "def init_cohere_chat(temperature):\n    COHERE_API_KEY = os.getenv(\"COHERE_API_KEY\")\n    COHERE_MODEL = os.getenv(\"COHERE_MODEL\")\n    return ChatCohere(\n        cohere_api_key=COHERE_API_KEY, model=COHERE_MODEL, temperature=temperature\n    )\nMAP_LLM_TYPE_TO_CHAT_MODEL = {\n    \"azure\": init_azure_chat,\n    \"bedrock\": init_bedrock,\n    \"openai\": init_openai_chat,",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "get_llm",
+        "kind": 2,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "def get_llm(temperature=0):\n    if not LLM_TYPE in MAP_LLM_TYPE_TO_CHAT_MODEL:\n        raise Exception(\n            \"LLM type not found. Please set LLM_TYPE to one of: \"\n            + \", \".join(MAP_LLM_TYPE_TO_CHAT_MODEL.keys())\n            + \".\"\n        )\n    return MAP_LLM_TYPE_TO_CHAT_MODEL[LLM_TYPE](temperature=temperature)",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "LLM_TYPE",
+        "kind": 5,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "LLM_TYPE = os.getenv(\"LLM_TYPE\", \"openai\")\ndef init_openai_chat(temperature):\n    OPENAI_API_KEY = os.getenv(\"OPENAI_API_KEY\")\n    return ChatOpenAI(\n        openai_api_key=OPENAI_API_KEY, streaming=True, temperature=temperature\n    )\ndef init_vertex_chat(temperature):\n    VERTEX_PROJECT_ID = os.getenv(\"VERTEX_PROJECT_ID\")\n    VERTEX_REGION = os.getenv(\"VERTEX_REGION\", \"us-central1\")\n    vertexai.init(project=VERTEX_PROJECT_ID, location=VERTEX_REGION)",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "MAP_LLM_TYPE_TO_CHAT_MODEL",
+        "kind": 5,
+        "importPath": "api.llm_integrations",
+        "description": "api.llm_integrations",
+        "peekOfCode": "MAP_LLM_TYPE_TO_CHAT_MODEL = {\n    \"azure\": init_azure_chat,\n    \"bedrock\": init_bedrock,\n    \"openai\": init_openai_chat,\n    \"vertex\": init_vertex_chat,\n    \"mistral\": init_mistral_chat,\n    \"cohere\": init_cohere_chat,\n}\ndef get_llm(temperature=0):\n    if not LLM_TYPE in MAP_LLM_TYPE_TO_CHAT_MODEL:",
+        "detail": "api.llm_integrations",
+        "documentation": {}
+    },
+    {
+        "label": "install_elser",
+        "kind": 2,
+        "importPath": "data.index_data",
+        "description": "data.index_data",
+        "peekOfCode": "def install_elser():\n    try:\n        elasticsearch_client.ml.get_trained_models(model_id=ELSER_MODEL)\n        print(f'\"{ELSER_MODEL}\" model is available')\n    except NotFoundError:\n        print(f'\"{ELSER_MODEL}\" model not available, downloading it now')\n        elasticsearch_client.ml.put_trained_model(\n            model_id=ELSER_MODEL, input={\"field_names\": [\"text_field\"]}\n        )\n        while True:",
+        "detail": "data.index_data",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "data.index_data",
+        "description": "data.index_data",
+        "peekOfCode": "def main():\n    install_elser()\n    print(f\"Loading data from ${FILE}\")\n    metadata_keys = [\"name\", \"summary\", \"url\", \"category\", \"updated_at\"]\n    workplace_docs = []\n    with open(FILE, \"rt\") as f:\n        for doc in json.loads(f.read()):\n            workplace_docs.append(\n                Document(\n                    page_content=doc[\"content\"],",
+        "detail": "data.index_data",
+        "documentation": {}
+    },
+    {
+        "label": "INDEX",
+        "kind": 5,
+        "importPath": "data.index_data",
+        "description": "data.index_data",
+        "peekOfCode": "INDEX = os.getenv(\"ES_INDEX\", \"workplace-app-docs\")\nFILE = os.getenv(\"FILE\", f\"{os.path.dirname(__file__)}/data.json\")\nELASTIC_CLOUD_ID = os.getenv(\"ELASTIC_CLOUD_ID\")\nELASTICSEARCH_URL = os.getenv(\"ELASTICSEARCH_URL\")\nELASTIC_API_KEY = os.getenv(\"ELASTIC_API_KEY\")\nELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )",
+        "detail": "data.index_data",
+        "documentation": {}
+    },
+    {
+        "label": "FILE",
+        "kind": 5,
+        "importPath": "data.index_data",
+        "description": "data.index_data",
+        "peekOfCode": "FILE = os.getenv(\"FILE\", f\"{os.path.dirname(__file__)}/data.json\")\nELASTIC_CLOUD_ID = os.getenv(\"ELASTIC_CLOUD_ID\")\nELASTICSEARCH_URL = os.getenv(\"ELASTICSEARCH_URL\")\nELASTIC_API_KEY = os.getenv(\"ELASTIC_API_KEY\")\nELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )\nelif ELASTIC_CLOUD_ID:",
+        "detail": "data.index_data",
+        "documentation": {}
+    },
+    {
+        "label": "ELASTIC_CLOUD_ID",
+        "kind": 5,
+        "importPath": "data.index_data",
+        "description": "data.index_data",
+        "peekOfCode": "ELASTIC_CLOUD_ID = os.getenv(\"ELASTIC_CLOUD_ID\")\nELASTICSEARCH_URL = os.getenv(\"ELASTICSEARCH_URL\")\nELASTIC_API_KEY = os.getenv(\"ELASTIC_API_KEY\")\nELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )\nelif ELASTIC_CLOUD_ID:\n    elasticsearch_client = Elasticsearch(",
+        "detail": "data.index_data",
+        "documentation": {}
+    },
+    {
+        "label": "ELASTICSEARCH_URL",
+        "kind": 5,
+        "importPath": "data.index_data",
+        "description": "data.index_data",
+        "peekOfCode": "ELASTICSEARCH_URL = os.getenv(\"ELASTICSEARCH_URL\")\nELASTIC_API_KEY = os.getenv(\"ELASTIC_API_KEY\")\nELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )\nelif ELASTIC_CLOUD_ID:\n    elasticsearch_client = Elasticsearch(\n        cloud_id=ELASTIC_CLOUD_ID, api_key=ELASTIC_API_KEY",
+        "detail": "data.index_data",
+        "documentation": {}
+    },
+    {
+        "label": "ELASTIC_API_KEY",
+        "kind": 5,
+        "importPath": "data.index_data",
+        "description": "data.index_data",
+        "peekOfCode": "ELASTIC_API_KEY = os.getenv(\"ELASTIC_API_KEY\")\nELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )\nelif ELASTIC_CLOUD_ID:\n    elasticsearch_client = Elasticsearch(\n        cloud_id=ELASTIC_CLOUD_ID, api_key=ELASTIC_API_KEY\n    )",
+        "detail": "data.index_data",
+        "documentation": {}
+    },
+    {
+        "label": "ELSER_MODEL",
+        "kind": 5,
+        "importPath": "data.index_data",
+        "description": "data.index_data",
+        "peekOfCode": "ELSER_MODEL = os.getenv(\"ELSER_MODEL\", \".elser_model_2\")\nif ELASTICSEARCH_URL:\n    elasticsearch_client = Elasticsearch(\n        hosts=[ELASTICSEARCH_URL],\n    )\nelif ELASTIC_CLOUD_ID:\n    elasticsearch_client = Elasticsearch(\n        cloud_id=ELASTIC_CLOUD_ID, api_key=ELASTIC_API_KEY\n    )\nelse:",
+        "detail": "data.index_data",
+        "documentation": {}
+    }
+]
