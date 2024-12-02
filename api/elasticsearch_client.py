@@ -7,9 +7,13 @@ ELASTIC_CLOUD_ID = os.getenv("ELASTIC_CLOUD_ID")
 ELASTICSEARCH_URL = os.getenv("ELASTICSEARCH_URL")
 ELASTIC_API_KEY = os.getenv("ELASTIC_API_KEY")
 
+ELASTICSEARCH_USERNAME = os.getenv('ELASTICSEARCH_USERNAME')
+ELASTICSEARCH_PASSWORD = os.getenv('ELASTICSEARCH_PASSWORD')
+
 if ELASTICSEARCH_URL:
     elasticsearch_client = Elasticsearch(
         hosts=[ELASTICSEARCH_URL],
+        http_auth=(ELASTICSEARCH_USERNAME, ELASTICSEARCH_PASSWORD)
     )
 elif ELASTIC_CLOUD_ID:
     elasticsearch_client = Elasticsearch(

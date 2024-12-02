@@ -5,7 +5,6 @@ from elasticsearch_client import (
     get_elasticsearch_chat_message_history,
 )
 from flask import render_template, stream_with_context, current_app
-import json
 import os
 
 INDEX = os.getenv("ES_INDEX", "workplace-app-docs")
@@ -33,6 +32,10 @@ def ask_question(question, session_id):
         INDEX_CHAT_HISTORY, session_id
     )
 
+    # In toàn bộ chat_history vào cmd
+    # current_app.logger.debug("Chat history: %s", chat_history.messages)
+
+
     if len(chat_history.messages) > 0:
         # create a condensed question
         condense_question_prompt = render_template(
@@ -48,12 +51,8 @@ def ask_question(question, session_id):
     current_app.logger.debug("Question: %s", question)
 
     docs = store.as_retriever().invoke(condensed_question)
-    for doc in docs:
-        doc_source = {**doc.metadata, "page_content": doc.page_content}
-        current_app.logger.debug(
-            "Retrieved document passage from: %s", doc.metadata["name"]
-        )
-        yield f"data: {SOURCE_TAG} {json.dumps(doc_source)}\n\n"
+    
+    current_app.logger.debug("%s", docs)
 
     qa_prompt = render_template(
         "rag_prompt.txt",

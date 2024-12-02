@@ -343,3 +343,5 @@ zipp==3.17.0
 # The following packages are considered to be unsafe in a requirements file:
 # pip
 # setuptools
+pypdf==5.1.0
+langchain-text-splitters==0.0.2

@@ -1,9 +1,8 @@
 from elasticsearch import Elasticsearch, NotFoundError
 from langchain_elasticsearch import ElasticsearchStore
-from langchain.docstore.document import Document
+from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
-import json
 import os
 import time
 
@@ -12,15 +11,18 @@ load_dotenv()
 # Global variables
 # Modify these if you want to use a different file, index or model
 INDEX = os.getenv("ES_INDEX", "workplace-app-docs")
-FILE = os.getenv("FILE", f"{os.path.dirname(__file__)}/data.json")
+BOOKS = os.path.join(os.path.dirname(__file__), "books")
 ELASTIC_CLOUD_ID = os.getenv("ELASTIC_CLOUD_ID")
 ELASTICSEARCH_URL = os.getenv("ELASTICSEARCH_URL")
 ELASTIC_API_KEY = os.getenv("ELASTIC_API_KEY")
 ELSER_MODEL = os.getenv("ELSER_MODEL", ".elser_model_2")
+ELASTICSEARCH_USERNAME = os.getenv('ELASTICSEARCH_USERNAME')
+ELASTICSEARCH_PASSWORD = os.getenv('ELASTICSEARCH_PASSWORD')
 
 if ELASTICSEARCH_URL:
     elasticsearch_client = Elasticsearch(
         hosts=[ELASTICSEARCH_URL],
+        http_auth=(ELASTICSEARCH_USERNAME, ELASTICSEARCH_PASSWORD)
     )
 elif ELASTIC_CLOUD_ID:
     elasticsearch_client = Elasticsearch(
@@ -59,26 +61,26 @@ def install_elser():
 def main():
     install_elser()
 
-    print(f"Loading data from ${FILE}")
+    print(f"Loading data from ${BOOKS}")
 
-    metadata_keys = ["name", "summary", "url", "category", "updated_at"]
     workplace_docs = []
-    with open(FILE, "rt") as f:
-        for doc in json.loads(f.read()):
-            workplace_docs.append(
-                Document(
-                    page_content=doc["content"],
-                    metadata={k: doc.get(k) for k in metadata_keys},
-                )
-            )
+
+    pdf_files = [f for f in os.listdir(BOOKS) if f.endswith(".pdf")]
+    for pdf_file in pdf_files:
+        file_path = os.path.join(BOOKS, pdf_file)
+        print(f"Đang đọc tệp: {file_path}")
+        loader = PyPDFLoader(file_path)
+        workplace_docs.append(loader.load_and_split())
 
     print(f"Loaded {len(workplace_docs)} documents")
 
     text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-        chunk_size=512, chunk_overlap=256
-    )
+        chunk_size=2000,
+        chunk_overlap=200)
 
-    docs = text_splitter.transform_documents(workplace_docs)
+    docs = []
+    for item in workplace_docs:
+        docs.extend(text_splitter.split_documents(item))
 
     print(f"Split {len(workplace_docs)} documents into {len(docs)} chunks")
 
@@ -94,7 +96,7 @@ def main():
         index_name=INDEX,
         strategy=ElasticsearchStore.SparseVectorRetrievalStrategy(model_id=ELSER_MODEL),
         bulk_kwargs={
-            "request_timeout": 60,
+            "request_timeout": 120,
         },
     )
 

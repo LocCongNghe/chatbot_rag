@@ -6,3 +6,4 @@ api/.env
 venv
 .DS_Store
 .vscode
+.env

@@ -1,13 +1,11 @@
 from langchain_community.chat_models import (
     ChatOpenAI,
-    ChatVertexAI,
     AzureChatOpenAI,
     BedrockChat,
     ChatCohere,
 )
 from langchain_mistralai.chat_models import ChatMistralAI
 import os
-import vertexai
 import boto3
 
 LLM_TYPE = os.getenv("LLM_TYPE", "openai")
@@ -16,16 +14,9 @@ LLM_TYPE = os.getenv("LLM_TYPE", "openai")
 def init_openai_chat(temperature):
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
     return ChatOpenAI(
-        openai_api_key=OPENAI_API_KEY, streaming=True, temperature=temperature
+        model ="gpt-4o-mini",
+        openai_api_key=OPENAI_API_KEY, streaming=True, temperature=temperature,
     )
-
-
-def init_vertex_chat(temperature):
-    VERTEX_PROJECT_ID = os.getenv("VERTEX_PROJECT_ID")
-    VERTEX_REGION = os.getenv("VERTEX_REGION", "us-central1")
-    vertexai.init(project=VERTEX_PROJECT_ID, location=VERTEX_REGION)
-    return ChatVertexAI(streaming=True, temperature=temperature)
-
 
 def init_azure_chat(temperature):
     OPENAI_VERSION = os.getenv("OPENAI_VERSION", "2023-05-15")
@@ -88,7 +79,6 @@ MAP_LLM_TYPE_TO_CHAT_MODEL = {
     "azure": init_azure_chat,
     "bedrock": init_bedrock,
     "openai": init_openai_chat,
-    "vertex": init_vertex_chat,
     "mistral": init_mistral_chat,
     "cohere": init_cohere_chat,
 }
