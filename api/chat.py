@@ -1,11 +1,13 @@
+import os
+from flask import render_template, stream_with_context, current_app
 from langchain_elasticsearch import ElasticsearchStore
-from llm_integrations import get_llm
 from elasticsearch_client import (
     elasticsearch_client,
     get_elasticsearch_chat_message_history,
 )
-from flask import render_template, stream_with_context, current_app
-import os
+from llm_integrations import get_llm
+from grade_documents import is_document_relevant
+from web_search import web_search
 
 INDEX = os.getenv("ES_INDEX", "workplace-app-docs")
 INDEX_CHAT_HISTORY = os.getenv(
@@ -15,6 +17,9 @@ ELSER_MODEL = os.getenv("ELSER_MODEL", ".elser_model_2")
 SESSION_ID_TAG = "[SESSION_ID]"
 SOURCE_TAG = "[SOURCE]"
 DONE_TAG = "[DONE]"
+ENABLE_WEB_SEARCH = True
+
+
 
 store = ElasticsearchStore(
     es_connection=elasticsearch_client,
@@ -54,12 +59,37 @@ def ask_question(question, session_id):
     
     current_app.logger.debug("%s", docs)
 
+
+    # danh gia docs o day:
+    is_relevant = is_document_relevant(question=question, docs=docs, chat_history=chat_history.messages)
+    current_app.logger.debug("/n/n")
+    current_app.logger.debug("danh gia: %s", is_relevant)
+    current_app.logger.debug("/n/n")
+
+    ##############
+
+    if is_relevant:
+        prompt_file = "rag_prompt.txt"
+        yield f"data: ***Sử dụng dữ liệu trong kho dữ liệu*** <br><br>"
+    else:
+        docs = web_search(question)
+        current_app.logger.debug("internet: %s", docs)
+        prompt_file = "rag_prompt2.txt"
+        yield f"data: ***Tra cứu dữ liệu trên internet*** <br><br>"
+
+
+
+
     qa_prompt = render_template(
-        "rag_prompt.txt",
+        prompt_file,
         question=question,
         docs=docs,
         chat_history=chat_history.messages,
     )
+
+    current_app.logger.debug("/n/n")
+    current_app.logger.debug("prompt: %s", qa_prompt)
+    current_app.logger.debug("/n/n")
 
     answer = ""
     for chunk in get_llm().stream(qa_prompt):
