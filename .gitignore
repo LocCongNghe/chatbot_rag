@@ -7,3 +7,4 @@ venv
 .DS_Store
 .vscode
 .env
+data/__pycache__
