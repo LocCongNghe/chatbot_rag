@@ -17,8 +17,6 @@ ELSER_MODEL = os.getenv("ELSER_MODEL", ".elser_model_2")
 SESSION_ID_TAG = "[SESSION_ID]"
 SOURCE_TAG = "[SOURCE]"
 DONE_TAG = "[DONE]"
-ENABLE_WEB_SEARCH = True
-
 
 
 store = ElasticsearchStore(
@@ -36,10 +34,6 @@ def ask_question(question, session_id):
     chat_history = get_elasticsearch_chat_message_history(
         INDEX_CHAT_HISTORY, session_id
     )
-
-    # In toàn bộ chat_history vào cmd
-    # current_app.logger.debug("Chat history: %s", chat_history.messages)
-
 
     if len(chat_history.messages) > 0:
         # create a condensed question
@@ -59,14 +53,7 @@ def ask_question(question, session_id):
     
     current_app.logger.debug("%s", docs)
 
-
-    # danh gia docs o day:
     is_relevant = is_document_relevant(question=question, docs=docs, chat_history=chat_history.messages)
-    current_app.logger.debug("/n/n")
-    current_app.logger.debug("danh gia: %s", is_relevant)
-    current_app.logger.debug("/n/n")
-
-    ##############
 
     if is_relevant:
         prompt_file = "rag_prompt.txt"
@@ -76,9 +63,6 @@ def ask_question(question, session_id):
         current_app.logger.debug("internet: %s", docs)
         prompt_file = "rag_prompt2.txt"
         yield f"data: ***Tra cứu dữ liệu trên internet*** <br><br>"
-
-
-
 
     qa_prompt = render_template(
         prompt_file,
@@ -92,9 +76,10 @@ def ask_question(question, session_id):
     current_app.logger.debug("/n/n")
 
     answer = ""
+
     for chunk in get_llm().stream(qa_prompt):
         content = chunk.content.replace(
-            "\n", " "
+            "\n", "<p>"
         )  # the stream can get messed up with newlines
         yield f"data: {content}\n\n"
         answer += chunk.content
