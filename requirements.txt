@@ -160,19 +160,19 @@ jsonpatch==1.33
     #   langchain-core
 jsonpointer==2.4
     # via jsonpatch
-langchain==0.1.9
+langchain==0.3.9
     # via -r requirements.in
-langchain-community==0.0.27
+langchain-community==0.3.9
     # via langchain
-langchain-core==0.1.30
+langchain-core==0.3.21
     # via
     #   langchain
     #   langchain-community
     #   langchain-elasticsearch
     #   langchain-mistralai
-langchain-elasticsearch==0.1.0
+langchain-elasticsearch==0.3.0
     # via -r requirements.in
-langchain-mistralai==0.0.5
+langchain-mistralai==0.2.3
     # via -r requirements.in
 langsmith==0.1.10
     # via
@@ -341,7 +341,7 @@ zipp==3.17.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-# pip
+# pips
 # setuptools
 pypdf==5.1.0
-langchain-text-splitters==0.0.2
+langchain-text-splitters==0.3.2
