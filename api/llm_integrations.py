@@ -15,7 +15,10 @@ def init_openai_chat(temperature):
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
     return ChatOpenAI(
         model ="gpt-4o-mini",
-        openai_api_key=OPENAI_API_KEY, streaming=True, temperature=temperature,
+        openai_api_key=OPENAI_API_KEY, 
+        streaming=True, 
+        temperature=temperature, 
+        timeout=10, 
     )
 
 def init_azure_chat(temperature):

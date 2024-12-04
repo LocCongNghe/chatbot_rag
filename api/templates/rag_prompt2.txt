@@ -4,12 +4,7 @@ Nếu không có đủ thông tin trong dữ liệu, hãy chỉ trả lời rằ
 
 Dưới đây là tài liệu bạn có thể tham khảo:
 
-{% for doc in docs -%}
----
-{{ doc.page_content }}
----
-
-{% endfor -%}
+{{docs}}
 ----
 Chat history:
 {% for dialogue_turn in chat_history -%}
