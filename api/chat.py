@@ -36,7 +36,7 @@ def ask_question(question, session_id):
     )
 
     if len(chat_history.messages) > 0:
-        # create a condensed question
+        # nhờ llm tạo câu hỏi cô đọng từ lịch sử và câu hỏi hiện tại của người dùng
         condense_question_prompt = render_template(
             "condense_question_prompt.txt",
             question=question,
@@ -49,21 +49,25 @@ def ask_question(question, session_id):
     current_app.logger.debug("Condensed question: %s", condensed_question)
     current_app.logger.debug("Question: %s", question)
 
+    # trả về tài liệu sau khi tìm kiếm trong cơ sở dũ liệu
     docs = store.as_retriever().invoke(condensed_question)
     
     current_app.logger.debug("%s", docs)
 
+    # kiểm tra tài liệu trả về có liên quan hay không
     is_relevant = is_document_relevant(question=question, docs=docs, chat_history=chat_history.messages)
 
     if is_relevant:
         prompt_file = "rag_prompt.txt"
         yield f"data: ***Sử dụng dữ liệu trong kho dữ liệu*** <br><br>"
     else:
-        docs = web_search(question)
+        # tra dữ liệu trên internet
+        docs = web_search(condensed_question)
         current_app.logger.debug("internet: %s", docs)
         prompt_file = "rag_prompt2.txt"
         yield f"data: ***Tra cứu dữ liệu trên internet*** <br><br>"
 
+    # tạo prompt
     qa_prompt = render_template(
         prompt_file,
         question=question,
@@ -77,6 +81,7 @@ def ask_question(question, session_id):
 
     answer = ""
 
+    # gủi prompt và nhận câu trả lời
     for chunk in get_llm().stream(qa_prompt):
         content = chunk.content.replace(
             "\n", "<p>"
