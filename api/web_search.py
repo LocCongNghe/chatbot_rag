@@ -7,20 +7,11 @@ TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 def web_search(question):
     documents = None
     try:
-        search = TavilySearchResults(tavily_api_key=TAVILY_API_KEY, max_results=3, 
-                                   include_raw_content=True)
+        search = TavilySearchResults(tavily_api_key=TAVILY_API_KEY, max_results=5)
         
         docs = search.invoke({"query": question})
-
-        web_results = None
-        for d in docs:
-            if d.get("raw_content", None) != None:
-                web_results = Document(page_content=d["raw_content"])
-                break
-
-        if web_results == None:
-            web_results = "\n".join([d["content"] for d in docs])
-            web_results = Document(page_content=web_results)
+        web_results = "\n".join([d["content"] for d in docs])
+        web_results = Document(page_content=web_results)
 
         documents = web_results
 
