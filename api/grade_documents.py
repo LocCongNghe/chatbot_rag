@@ -1,8 +1,12 @@
 from flask import render_template
 from llm_integrations import get_llm
 
-def is_document_relevant(question, docs, chat_history):
-    is_relevant = True
+AMBIGUOUS = "ambiguous"
+YES = "yes"
+NO = "no"
+
+def document_relevant(question, docs, chat_history):
+    """ Return YES or NO or AMBIGUOUS"""
     try:
         prompt = render_template(
             "grade_documents_prompt.txt",
@@ -15,9 +19,14 @@ def is_document_relevant(question, docs, chat_history):
         for chunk in get_llm().stream(prompt):
             answer += chunk.content
 
-        is_relevant = ("yes" in answer) or ("Yes" in answer)
-    
+        if YES in answer.lower():    
+            return YES
+        elif AMBIGUOUS in answer.lower():
+            return AMBIGUOUS
+        else:
+            return NO
+        
     except Exception as error:
         print(error)
     
-    return is_relevant
+    return YES

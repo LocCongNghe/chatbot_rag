@@ -6,7 +6,7 @@ from elasticsearch_client import (
     get_elasticsearch_chat_message_history,
 )
 from llm_integrations import get_llm
-from grade_documents import is_document_relevant
+from grade_documents import document_relevant, YES, NO, AMBIGUOUS
 from web_search import web_search
 
 INDEX = os.getenv("ES_INDEX", "workplace-app-docs")
@@ -55,17 +55,23 @@ def ask_question(question, session_id):
     current_app.logger.debug("%s", docs)
 
     # kiểm tra tài liệu trả về có liên quan hay không
-    is_relevant = is_document_relevant(question=question, docs=docs, chat_history=chat_history.messages)
+    is_relevant = document_relevant(question=question, docs=docs, chat_history=chat_history.messages)
 
-    if is_relevant:
+    if is_relevant == YES:
         prompt_file = "rag_prompt.txt"
         yield f"data: ***Sử dụng dữ liệu trong kho dữ liệu*** <br><br>"
-    else:
+    elif is_relevant == NO:
         # tra dữ liệu trên internet
         docs = web_search(condensed_question)
         current_app.logger.debug("internet: %s", docs)
         prompt_file = "rag_prompt2.txt"
         yield f"data: ***Tra cứu dữ liệu trên internet*** <br><br>"
+    else:
+        # Sử dụng dữ liệu trong kho dữ liệu kết hợp tra cứu dữ liệu trên internet
+        docs.append(web_search(condensed_question))
+        current_app.logger.debug("internet: %s", docs)
+        prompt_file = "rag_prompt2.txt"
+        yield f"data: ***Sử dụng dữ liệu trong kho dữ liệu kết hợp tra cứu dữ liệu trên internet*** <br><br>"
 
     # tạo prompt
     qa_prompt = render_template(
