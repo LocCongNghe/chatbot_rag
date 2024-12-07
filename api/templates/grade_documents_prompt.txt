@@ -19,7 +19,12 @@ Dưới đây là câu hỏi của người dùng: {{ question }}
 
 Nếu tài liệu hoặc lịch sử trò chuyện có liên quan đến câu hỏi của người dùng, hãy đánh giá nó là có liên quan.  
 Bạn không cần áp dụng tiêu chuẩn nghiêm ngặt. Mục tiêu là lọc ra các kết quả truy xuất sai lệch.  
-Hãy đưa ra một câu trả lời 'yes' (có) hoặc 'no' (không) hoặc 'ambiguous' để chỉ ra liệu tài liệu có liên quan đến câu hỏi hay không.  
+Hãy đưa ra một câu trả lời 'yes' (có) hoặc 'no' (không) hoặc 'ambiguous' (mơ hồ) để chỉ ra liệu tài liệu có liên quan đến câu hỏi hay không.  
+
+"yes": tài liệu hoặc lịch sử chat liên quan đến câu hỏi. (hoàn toàn đủ để tạo câu trả lời)
+"no": tài liêu và lịch sử chat không liên quan đếu câu hỏi. (không thể tạo câu trả lời)
+"ambiguous": tài liệu và lịch sử chat có thể gần nhưng không đủ để trả lời câu hỏi.
+
 Cung cấp câu trả lời dưới dạng JSON mà không có phần mở đầu hoặc giải thích và sử dụng các hướng dẫn này để định dạng đầu ra:  
 "answer": "yes"
 "answer": "no"
