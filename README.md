@@ -22,9 +22,11 @@ Với mục tiêu trở thành người bạn đồng hành thông minh, chatbot
 
 
 ## Báo cáo:
+[báo cáo](./report.pdf)
 
 
 ## Slide:
+[slide](./slide.pptx)
 
 
 ## Tải về
