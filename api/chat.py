@@ -61,19 +61,19 @@ def ask_question(question, session_id):
 
     if is_relevant == YES:
         prompt_file = "rag_prompt.txt"
-        yield f"data: <b>Sử dụng dữ liệu trong kho dữ liệu</b> <br><br>"
+        yield f"data: <b>Sử dụng dữ liệu trong kho dữ liệu</b> <br><br>\n\n"
     elif is_relevant == NO:
         # tra dữ liệu trên internet
         docs = web_search(condensed_question)
         current_app.logger.debug("internet: %s", docs)
         prompt_file = "rag_prompt2.txt"
-        yield f"data: <b>Tra cứu dữ liệu trên internet</b> <br><br>"
+        yield f"data: <b>Tra cứu dữ liệu trên internet</b> <br><br>\n\n"
     else:
         # Sử dụng dữ liệu trong kho dữ liệu kết hợp tra cứu dữ liệu trên internet
         docs.append(web_search(condensed_question))
         current_app.logger.debug("internet: %s", docs)
         prompt_file = "rag_prompt2.txt"
-        yield f"data: <b>Sử dụng dữ liệu trong kho dữ liệu kết hợp tra cứu dữ liệu trên internet</b> <br><br>"
+        yield f"data: <b>Sử dụng dữ liệu trong kho dữ liệu kết hợp tra cứu dữ liệu trên internet</b> <br><br>\n\n"
 
     # tạo prompt
     qa_prompt = render_template(
