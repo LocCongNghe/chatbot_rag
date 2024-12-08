@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import {
   actions,
   AppStatus,
@@ -13,7 +12,6 @@ import SearchInput from 'components/search_input'
 import { ReactComponent as ChatIcon } from 'images/chat_icon.svg'
 import { ReactComponent as ElasticLogo } from 'images/elastic_logo.svg'
 import { SearchResults } from './components/search_results'
-
 const App = () => {
   const dispatch = useAppDispatch()
   const status = useAppSelector((state) => state.status)
@@ -23,7 +21,6 @@ const App = () => {
     (state) => !!state.conversation?.[0]?.content
   )
   const [searchQuery, setSearchQuery] = useState<string>('')
-
   const handleSearch = (query: string) => {
     dispatch(thunkActions.search(query))
   }
@@ -38,43 +35,38 @@ const App = () => {
   }
   const handleSourceClick = (name) => {
     dispatch(actions.sourceToggle({ name, expanded: true }))
-
     setTimeout(() => {
       document
         .querySelector(`[data-source="${name}"]`)
         ?.scrollIntoView({ behavior: 'smooth' })
     }, 300)
   }
-
   const suggestedQueries = [
-    // 'What is our work from home policy?',
-    // "What's the NASA sales team?",
-    // 'Does the company own my side project?',
-    // 'What job openings do we have?',
-    // 'How does compensation work?',
+    'Vợ bảo tôi vô tâm',
+    "Vợ bảo ăn gì cũng được ",
+    'Anh chả thương em',
+    'Em béo lắm hả anh?',
+    'Nếu mẹ anh và em cùng rơi xuống nước, anh sẽ cứu ai trước?',
   ]
-
   return (
     <>
       <Header />
-
-      <div className="p-4 max-w-2xl mx-auto">
+      <div className="p-6 max-w-3xl mx-auto bg-gradient-to-r from-blue-100 to-teal-100 shadow-md rounded-lg">
         <SearchInput
           onSearch={handleSearch}
           value={searchQuery}
           appStatus={status}
         />
-
         {status === AppStatus.Idle ? (
           <div className="mx-auto my-6">
-            <h2 className="text-zinc-400 text-sm font-medium mb-3  inline-flex items-center gap-2">
-              <ChatIcon /> Common questions
+            <h2 className="text-zinc-600 text-sm font-medium mb-3 inline-flex items-center gap-2">
+              <ChatIcon /> Câu hỏi thường gặp
             </h2>
             <div className="flex flex-col space-y-4">
               {suggestedQueries.map((query) => (
                 <button
                   key={query}
-                  className="hover:-translate-y-1 hover:shadow-lg hover:bg-zinc-300 transition-transform h-12 px-4 py-2 bg-zinc-200 rounded-md shadow flex items-center text-zinc-700"
+                  className="hover:-translate-y-1 hover:shadow-lg hover:bg-zinc-200 transition-all h-12 px-4 py-2 bg-zinc-100 rounded-md shadow flex items-center text-zinc-700"
                   onClick={(e) => {
                     e.preventDefault()
                     setSearchQuery(query)
@@ -89,7 +81,7 @@ const App = () => {
         ) : (
           <>
             {hasSummary ? (
-              <div className="max-w-2xl mx-auto relative">
+              <div className="max-w-3xl mx-auto relative bg-white rounded-md p-6">
                 <Chat
                   status={status}
                   messages={messages}
@@ -98,7 +90,6 @@ const App = () => {
                   onAbortRequest={handleAbortRequest}
                   onSourceClick={handleSourceClick}
                 />
-
                 <SearchResults
                   results={sources}
                   toggleSource={handleToggleSource}
@@ -107,8 +98,8 @@ const App = () => {
             ) : (
               <div className="h-36 p-6 bg-white rounded-md shadow flex flex-col justify-start items-center gap-4 mt-6">
                 <ElasticLogo className="w-16 h-16" />
-                <p className="text-center text-zinc-400 text-sm ">
-                  Looking that up for you...
+                <p className="text-center text-zinc-400 text-sm">
+                  Đang suy nghĩ câu trả lời...
                 </p>
               </div>
             )}
@@ -118,5 +109,4 @@ const App = () => {
     </>
   )
 }
-
 export default App

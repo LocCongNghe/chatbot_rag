@@ -13,12 +13,7 @@ Hãy nhớ rằng, nhiệm vụ này là diễn giải và không phải lúc n�
 
 Dưới đây là tài liệu bạn có thể tham khảo:
 
-{% for doc in docs -%}
----
-{{ doc.page_content }}
----
-
-{% endfor -%}
+{{docs}}
 ----
 
 Lịch sử chat:
