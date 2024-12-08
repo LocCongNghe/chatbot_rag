@@ -14,7 +14,17 @@ Với mục tiêu trở thành người bạn đồng hành thông minh, chatbot
 - Tavily Search
 
 
+## Thành viên nhóm:
+- Nguyễn Gia Lộc - 22022554
+- Đỗ Tiến Dũng - 22022557
+- Vũ Minh Khải - 22022556
+- Trần Đức Đăng Khôi - 22022552
 
+
+## Báo cáo:
+
+
+## Slide:
 
 
 ## Tải về
