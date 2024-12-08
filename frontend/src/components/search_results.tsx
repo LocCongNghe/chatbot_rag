@@ -29,6 +29,5 @@ toggleSource={toggleSource}
 </>
 ) : (
 <div className="flex justify-center items-center text-zinc-500 text-sm py-8">
-<p>No results found</p>
 </div>
 )
