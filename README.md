@@ -3,7 +3,9 @@ Clara là một công cụ hỗ trợ tương tác, giúp người dùng hiểu 
 
 Với mục tiêu trở thành người bạn đồng hành thông minh, chatbot được thiết kế để giúp bạn hiểu sâu hơn và giao tiếp hiệu quả hơn, xây dựng mối quan hệ dựa trên sự thấu hiểu và tôn trọng.
 
-![Screenshot of the sample app](./app-demo.gif)
+<img src="./demo1.png" alt="Screenshot of the sample app" width="800"/>
+
+
 
 ## Công nghệ:
 - Corrective RAG
