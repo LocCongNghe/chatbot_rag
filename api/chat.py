@@ -1,4 +1,5 @@
 import os
+import time
 from flask import render_template, stream_with_context, current_app
 from langchain_elasticsearch import ElasticsearchStore
 from elasticsearch_client import (
@@ -6,6 +7,7 @@ from elasticsearch_client import (
     get_elasticsearch_chat_message_history,
 )
 from llm_integrations import get_llm
+from markdown import markdown
 from grade_documents import document_relevant, YES, NO, AMBIGUOUS
 from web_search import web_search
 
@@ -59,19 +61,19 @@ def ask_question(question, session_id):
 
     if is_relevant == YES:
         prompt_file = "rag_prompt.txt"
-        yield f"data: ***Sử dụng dữ liệu trong kho dữ liệu*** <br><br>"
+        yield f"data: <b>Sử dụng dữ liệu trong kho dữ liệu</b> <br><br>"
     elif is_relevant == NO:
         # tra dữ liệu trên internet
         docs = web_search(condensed_question)
         current_app.logger.debug("internet: %s", docs)
         prompt_file = "rag_prompt2.txt"
-        yield f"data: ***Tra cứu dữ liệu trên internet*** <br><br>"
+        yield f"data: <b>Tra cứu dữ liệu trên internet</b> <br><br>"
     else:
         # Sử dụng dữ liệu trong kho dữ liệu kết hợp tra cứu dữ liệu trên internet
         docs.append(web_search(condensed_question))
         current_app.logger.debug("internet: %s", docs)
         prompt_file = "rag_prompt2.txt"
-        yield f"data: ***Sử dụng dữ liệu trong kho dữ liệu kết hợp tra cứu dữ liệu trên internet*** <br><br>"
+        yield f"data: <b>Sử dụng dữ liệu trong kho dữ liệu kết hợp tra cứu dữ liệu trên internet</b> <br><br>"
 
     # tạo prompt
     qa_prompt = render_template(
@@ -89,14 +91,20 @@ def ask_question(question, session_id):
 
     # gủi prompt và nhận câu trả lời
     for chunk in get_llm().stream(qa_prompt):
-        content = chunk.content.replace(
-            "\n", "<p>"
-        )  # the stream can get messed up with newlines
-        yield f"data: {content}\n\n"
         answer += chunk.content
+    current_app.logger.debug("Answer: %s", answer)
+ 
+    answer = answer.replace("\n", "<p>")
+    answer = markdown(answer)
+
+    chunk_size = 4
+    delay=0.025
+    for i in range(0, len(answer), chunk_size):
+        chunk = answer[i:i+chunk_size]
+        yield f"data: {chunk}\n\n"
+        time.sleep(delay)
 
     yield f"data: {DONE_TAG}\n\n"
-    current_app.logger.debug("Answer: %s", answer)
 
     chat_history.add_user_message(question)
     chat_history.add_ai_message(answer)

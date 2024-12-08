@@ -16,7 +16,7 @@ def init_openai_chat(temperature):
     return ChatOpenAI(
         model ="gpt-4o-mini",
         openai_api_key=OPENAI_API_KEY, 
-        streaming=True, 
+        streaming=False, 
         temperature=temperature, 
         timeout=10, 
     )

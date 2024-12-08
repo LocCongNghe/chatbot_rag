@@ -18,7 +18,7 @@ export const Chat: React.FC<ChatProps> = ({
   status,
   messages,
   summary,
-  onSend,
+  onSend, 
   onAbortRequest,
   onSourceClick,
 }) => (

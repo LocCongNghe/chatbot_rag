@@ -63,7 +63,7 @@ export default function ChatInput({
         className="disabled:border-smoke disabled:opacity-75 h-14 w-full px-2 py-3.5 pr-20 border-2 rounded-md bg-gray-50 leadingd-9 focus:bg-white pl-9 flex items-center resize-none"
         ref={textareaReference}
         value={message}
-        placeholder="Ask a follow up question"
+        placeholder="Tiếp tục câu hỏi của bạn..."
         onKeyDown={handleKeyDown}
         onChange={onChange}
         disabled={isMessageLoading}
