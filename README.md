@@ -108,4 +108,13 @@ và
 cd frontend
 yarn start
 ```
+Truy cập: http://localhost:3000/
 
+### Docker
+Hoặc có thể sử dụng docker để chạy
+```sh
+docker build -f Dockerfile -t chatbot-rag-app .
+docker run --rm --env-file .env chatbot-rag-app flask create-index
+docker run --rm -p 4000:4000 --env-file .env -d chatbot-rag-app
+```
+Truy cập: http://localhost:4000/
